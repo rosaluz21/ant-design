@@ -18,7 +18,7 @@ async function getAllComponentMds() {
 
   // ~demos/components-button-demo-basic
   const result = mds.map((p) => p.replace('.md', '').replace(/\//g, '-'));
-  return result;
+  return result.slice(0, 10);
 }
 
 async function createSiteServer() {
@@ -33,15 +33,14 @@ class BrowserAuto {
 
   private context: BrowserContext | null = null;
 
-  private outputDir = './imageSnapshots';
+  private outputDir = './imageSnapshots-new';
 
   async init() {
     this.browser = await chromium.launch({
-      headless: true,
+      headless: false,
     });
     this.context = await this.browser.newContext({
-      // 实测 iPhone SE 的屏幕尺寸最合适
-      // viewport: { width: 375, height: 667 },
+      viewport: { width: 800, height: 600 },
       deviceScaleFactor: 2,
     });
 
@@ -67,8 +66,8 @@ class BrowserAuto {
     if (!this.context) return;
 
     const page = await this.context.newPage();
-    const pageUrl = `http://localhost:3000/~demos/${mdPath}`;
-    console.log(pageUrl, 'pageUrl');
+    // 每个不同主题需要单独截图，可否截屏到一起呢
+    const pageUrl = `http://localhost:8001/~demos/${mdPath}?theme=default&css-var-enabled=1`;
     await page.goto(pageUrl);
     // 需要禁用掉页面中的各种采集和埋点请求，避免干扰
     await page.waitForLoadState('networkidle');
@@ -78,8 +77,19 @@ class BrowserAuto {
       content: '*{animation: none!important;}',
     });
 
+    await page.waitForSelector('.dumi-antd-demo-layout');
+    // Get scroll height of the rendered page and set viewport
+    const bodyHeight = await page.evaluate(() => document.body.scrollHeight);
+    await page.setViewportSize({ width: 800, height: bodyHeight });
+
     // 保存截图到 ./result 目录
-    await page.screenshot({ path: path.join('./result', `${mdPath}.png`) });
+    await page.screenshot({
+      path: path.join(this.outputDir, `${mdPath}.png`),
+      scale: 'device',
+      type: 'png',
+      fullPage: true,
+      timeout: 3000,
+    });
 
     return page?.close();
   }
