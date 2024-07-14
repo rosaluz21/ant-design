@@ -12,16 +12,39 @@ const DemoLayout: React.FC = () => {
   const outlet = useOutlet();
 
   const [params] = useSearchParams();
-  const currentTheme = params.get('theme')! as keyof typeof themes;
+  const visualDiffMode = params.get('visual-diff-mode');
   const cssVarMode = params.get('css-var-enabled');
+
+  if (visualDiffMode) {
+    return (
+      <>
+        {Object.entries(themes).map(([key, algorithm]) => {
+          const configTheme = {
+            algorithm,
+            token: {
+              fontFamily: 'Arial',
+            },
+          };
+
+          return (
+            <div
+              className="dumi-antd-demo-layout"
+              style={{ background: key === 'dark' ? '#000' : '', padding: `24px 12px` }}
+              key={key}
+            >
+              <ConfigProvider theme={{ ...configTheme, cssVar: !!cssVarMode }}>
+                {outlet}
+              </ConfigProvider>
+            </div>
+          );
+        })}
+      </>
+    );
+  }
+
   return (
-    <div
-      className="dumi-antd-demo-layout"
-      style={{ background: currentTheme === 'dark' ? '#000' : '', padding: `24px 12px` }}
-    >
-      <ConfigProvider theme={{ ...themes[currentTheme], cssVar: !!cssVarMode }}>
-        {outlet}
-      </ConfigProvider>
+    <div className="dumi-antd-demo-layout" style={{ background: '', padding: `24px 12px` }}>
+      {outlet}
     </div>
   );
 };
