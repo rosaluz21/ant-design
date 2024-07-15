@@ -1,0 +1,2 @@
+(("undefined"!=typeof globalThis?globalThis:self).makoChunk_antd=("undefined"!=typeof globalThis?globalThis:self).makoChunk_antd||[]).push([["-mOtKptu"],{"-mOtKptu":function(e,t,n){"use strict";n.d(t,"__esModule",{value:!0}),n.d(t,"default",{enumerable:!0,get:function(){return u;}});var a=n("8Z0rk4BW");n("OGjuZXaT");var l=n("qdGieaVz"),u=()=>(0,a.jsx)(l.Watermark,{content:["Ant Design","Happy Working"],children:(0,a.jsx)("div",{style:{height:500}})});}}]);
+//# sourceMappingURL=-mOtKptu-async.375160fa.js.map

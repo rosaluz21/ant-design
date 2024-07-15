@@ -1,0 +1,2 @@
+(("undefined"!=typeof globalThis?globalThis:self).makoChunk_antd=("undefined"!=typeof globalThis?globalThis:self).makoChunk_antd||[]).push([["ZlVQ1Z7Q"],{ZlVQ1Z7Q:function(e,l,a){"use strict";a.d(l,"__esModule",{value:!0}),a.d(l,"default",{enumerable:!0,get:function(){return u;}});var n=a("8Z0rk4BW");a("yAt4-WUc");var t=a("qdGieaVz"),u=()=>(0,n.jsx)(t.Skeleton,{active:!0});}}]);
+//# sourceMappingURL=ZlVQ1Z7Q-async.591b5e67.js.map

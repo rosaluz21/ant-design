@@ -1,0 +1,2 @@
+(("undefined"!=typeof globalThis?globalThis:self).makoChunk_antd=("undefined"!=typeof globalThis?globalThis:self).makoChunk_antd||[]).push([["HG-eyeMc"],{"HG-eyeMc":function(e,n,d){"use strict";d.d(n,"__esModule",{value:!0}),d.d(n,"default",{enumerable:!0,get:function(){return a;}});var l=d("8Z0rk4BW");d("DOoliTQe");var t=d("qdGieaVz"),a=()=>(0,l.jsxs)(t.Card,{style:{width:300},children:[(0,l.jsx)("p",{children:"Card content"}),(0,l.jsx)("p",{children:"Card content"}),(0,l.jsx)("p",{children:"Card content"})]});}}]);
+//# sourceMappingURL=HG-eyeMc-async.fb5f4ffa.js.map

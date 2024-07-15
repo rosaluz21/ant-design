@@ -1,0 +1,2 @@
+(("undefined"!=typeof globalThis?globalThis:self).makoChunk_antd=("undefined"!=typeof globalThis?globalThis:self).makoChunk_antd||[]).push([["QG7GAsIV"],{QG7GAsIV:function(e,a,s){"use strict";s.d(a,"__esModule",{value:!0}),s.d(a,"default",{enumerable:!0,get:function(){return t;}});var l=s("8Z0rk4BW");s("WU5gMuuM");var o=s("qdGieaVz"),t=()=>(0,l.jsx)(o.QRCode,{errorLevel:"H",value:"https://ant.design/",icon:"https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"});}}]);
+//# sourceMappingURL=QG7GAsIV-async.c8deb586.js.map
