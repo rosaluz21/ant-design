@@ -9,17 +9,17 @@ const onChange = (key: string) => {
 const items: TabsProps['items'] = [
   {
     key: '1',
-    label: 'Tab 1',
+    label: 'Principal',
     children: 'Content of Tab Pane 1',
   },
   {
     key: '2',
-    label: 'Tab 2',
+    label: 'Promociones',
     children: 'Content of Tab Pane 2',
   },
   {
     key: '3',
-    label: 'Tab 3',
+    label: 'Social',
     children: 'Content of Tab Pane 3',
   },
 ];
